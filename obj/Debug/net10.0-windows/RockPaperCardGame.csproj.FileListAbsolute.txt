@@ -1,0 +1,14 @@
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\bin\Debug\net10.0-windows\RockPaperCardGame.exe
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\bin\Debug\net10.0-windows\RockPaperCardGame.deps.json
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\bin\Debug\net10.0-windows\RockPaperCardGame.runtimeconfig.json
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\bin\Debug\net10.0-windows\RockPaperCardGame.dll
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\bin\Debug\net10.0-windows\RockPaperCardGame.pdb
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.AssemblyInfoInputs.cache
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.AssemblyInfo.cs
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.csproj.CoreCompileInputs.cache
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.dll
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\refint\RockPaperCardGame.dll
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.pdb
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.genruntimeconfig.cache
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\ref\RockPaperCardGame.dll
