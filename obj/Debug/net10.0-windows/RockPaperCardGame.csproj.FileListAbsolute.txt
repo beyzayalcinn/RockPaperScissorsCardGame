@@ -12,3 +12,4 @@ C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\refint\Roc
 C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.pdb
 C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.genruntimeconfig.cache
 C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\ref\RockPaperCardGame.dll
+C:\Users\HUAWEI\MyProject\RockPaperCardGame\obj\Debug\net10.0-windows\RockPaperCardGame.sourcelink.json

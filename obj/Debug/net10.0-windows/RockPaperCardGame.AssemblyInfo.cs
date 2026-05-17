@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RockPaperCardGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be65d64c1634061b8a86c41c40335125063e309c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RockPaperCardGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RockPaperCardGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

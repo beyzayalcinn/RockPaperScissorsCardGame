@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RockPaperCardGame
 {
@@ -29,18 +30,19 @@ namespace RockPaperCardGame
 
         string[] cards = { "🪨", "📄", "✂️" };
 
-        public Form1()
-        {
-            InitializeComponent();
-            SetupUI();
-        }
+       public Form1()
+{
+
+    SetupUI();
+
+}
 
         void SetupUI()
         {
             // FORM
             this.Text = "Rock Paper Scissors";
-            this.Width = 1000;
-            this.Height = 650;
+            this.Width = 1100;
+            this.Height = 720;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.FromArgb(20, 20, 35);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -50,82 +52,85 @@ namespace RockPaperCardGame
             titleLabel = new Label();
             titleLabel.Text = "ROCK PAPER SCISSORS";
             titleLabel.ForeColor = Color.White;
-            titleLabel.Font = new Font("Arial", 26, FontStyle.Bold);
+            titleLabel.Font = new Font("Arial", 28, FontStyle.Bold);
             titleLabel.AutoSize = true;
-            titleLabel.Location = new Point(250, 30);
 
             // PLAYER TEXT
             playerText = new Label();
             playerText.Text = "YOU";
             playerText.ForeColor = Color.White;
-            playerText.Font = new Font("Arial", 14, FontStyle.Bold);
+            playerText.Font = new Font("Arial", 18, FontStyle.Bold);
             playerText.AutoSize = true;
-            playerText.Location = new Point(180, 120);
 
             // COMPUTER TEXT
             computerText = new Label();
             computerText.Text = "COMPUTER";
             computerText.ForeColor = Color.White;
-            computerText.Font = new Font("Arial", 14, FontStyle.Bold);
+            computerText.Font = new Font("Arial", 18, FontStyle.Bold);
             computerText.AutoSize = true;
-            computerText.Location = new Point(680, 120);
 
             // PLAYER CARD
             playerCard = new Label();
             playerCard.Text = "❓";
             playerCard.ForeColor = Color.White;
-            playerCard.Font = new Font("Segoe UI Emoji", 70);
-            playerCard.AutoSize = true;
-            playerCard.Location = new Point(200, 180);
+            playerCard.BackColor = Color.FromArgb(35, 35, 55);
+            playerCard.Font = new Font("Segoe UI Emoji", 90);
+            playerCard.AutoSize = false;
+            playerCard.Size = new Size(180, 180);
+            playerCard.TextAlign = ContentAlignment.MiddleCenter;
 
             // COMPUTER CARD
             computerCard = new Label();
             computerCard.Text = "❓";
             computerCard.ForeColor = Color.White;
-            computerCard.Font = new Font("Segoe UI Emoji", 70);
-            computerCard.AutoSize = true;
-            computerCard.Location = new Point(720, 180);
+            computerCard.BackColor = Color.FromArgb(35, 35, 55);
+            computerCard.Font = new Font("Segoe UI Emoji", 90);
+            computerCard.AutoSize = false;
+            computerCard.Size = new Size(180, 180);
+            computerCard.TextAlign = ContentAlignment.MiddleCenter;
 
             // ROCK BUTTON
             rockBtn = new Button();
             rockBtn.Text = "🪨 Rock";
-            rockBtn.Size = new Size(140, 55);
-            rockBtn.Location = new Point(120, 420);
+            rockBtn.Size = new Size(150, 60);
+            rockBtn.Location = new Point(200, 470);
             rockBtn.BackColor = Color.FromArgb(70, 130, 180);
             rockBtn.ForeColor = Color.White;
             rockBtn.FlatStyle = FlatStyle.Flat;
-            rockBtn.Font = new Font("Arial", 11, FontStyle.Bold);
+            rockBtn.FlatAppearance.BorderSize = 0;
+            rockBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             rockBtn.Click += RockBtn_Click;
 
             // PAPER BUTTON
             paperBtn = new Button();
             paperBtn.Text = "📄 Paper";
-            paperBtn.Size = new Size(140, 55);
-            paperBtn.Location = new Point(300, 420);
+            paperBtn.Size = new Size(150, 60);
+            paperBtn.Location = new Point(430, 470);
             paperBtn.BackColor = Color.FromArgb(60, 179, 113);
             paperBtn.ForeColor = Color.White;
             paperBtn.FlatStyle = FlatStyle.Flat;
-            paperBtn.Font = new Font("Arial", 11, FontStyle.Bold);
+            paperBtn.FlatAppearance.BorderSize = 0;
+            paperBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             paperBtn.Click += PaperBtn_Click;
 
             // SCISSORS BUTTON
             scissorsBtn = new Button();
             scissorsBtn.Text = "✂️ Scissors";
-            scissorsBtn.Size = new Size(140, 55);
-            scissorsBtn.Location = new Point(480, 420);
+            scissorsBtn.Size = new Size(150, 60);
+            scissorsBtn.Location = new Point(660, 470);
             scissorsBtn.BackColor = Color.FromArgb(220, 20, 60);
             scissorsBtn.ForeColor = Color.White;
             scissorsBtn.FlatStyle = FlatStyle.Flat;
-            scissorsBtn.Font = new Font("Arial", 11, FontStyle.Bold);
+            scissorsBtn.FlatAppearance.BorderSize = 0;
+            scissorsBtn.Font = new Font("Arial", 12, FontStyle.Bold);
             scissorsBtn.Click += ScissorsBtn_Click;
 
             // RESULT LABEL
             resultLabel = new Label();
             resultLabel.Text = "Choose your move!";
             resultLabel.ForeColor = Color.Gold;
-            resultLabel.Font = new Font("Arial", 16, FontStyle.Bold);
+          resultLabel.Font = new Font("Arial", 10, FontStyle.Bold);
             resultLabel.AutoSize = true;
-            resultLabel.Location = new Point(320, 520);
 
             // SCORE LABEL
             scoreLabel = new Label();
@@ -133,7 +138,7 @@ namespace RockPaperCardGame
             scoreLabel.ForeColor = Color.White;
             scoreLabel.Font = new Font("Arial", 13, FontStyle.Bold);
             scoreLabel.AutoSize = true;
-            scoreLabel.Location = new Point(30, 30);
+            scoreLabel.Location = new Point(30, 20);
 
             // DECK LABEL
             deckLabel = new Label();
@@ -141,7 +146,7 @@ namespace RockPaperCardGame
             deckLabel.ForeColor = Color.Cyan;
             deckLabel.Font = new Font("Arial", 13, FontStyle.Bold);
             deckLabel.AutoSize = true;
-            deckLabel.Location = new Point(30, 70);
+            deckLabel.Location = new Point(30, 55);
 
             // ADD CONTROLS
             this.Controls.Add(titleLabel);
@@ -159,6 +164,36 @@ namespace RockPaperCardGame
             this.Controls.Add(resultLabel);
             this.Controls.Add(scoreLabel);
             this.Controls.Add(deckLabel);
+
+            // TITLE CENTER
+            titleLabel.Location = new Point(
+                (this.ClientSize.Width - titleLabel.Width) / 2,
+                25
+            );
+
+            // PLAYER AREA
+            playerCard.Location = new Point(220, 170);
+
+            playerText.Location = new Point(
+                playerCard.Left +
+                (playerCard.Width - playerText.Width) / 2,
+                120
+            );
+
+            // COMPUTER AREA
+            computerCard.Location = new Point(700, 170);
+
+            computerText.Location = new Point(
+                computerCard.Left +
+                (computerCard.Width - computerText.Width) / 2,
+                120
+            );
+
+            // RESULT CENTER
+            resultLabel.Location = new Point(
+                (this.ClientSize.Width - resultLabel.Width) / 2,
+                590
+            );
         }
 
         void PlayGame(string playerChoice)
@@ -173,47 +208,60 @@ namespace RockPaperCardGame
                 return;
             }
 
-        
+            // Deck azalt
             deckCount--;
-            deckLabel.Text = "🎴 Deck Cards: " + deckCount;
 
+            deckLabel.Text =
+                "🎴 Deck Cards: " + deckCount;
+
+            // Player card
             playerCard.Text = playerChoice;
 
-            string computerChoice = cards[rnd.Next(cards.Length)];
+            // Computer card
+            string computerChoice =
+                cards[rnd.Next(cards.Length)];
+
             computerCard.Text = computerChoice;
 
-           
+            // DRAW
             if (playerChoice == computerChoice)
             {
                 resultLabel.Text = "DRAW!";
                 resultLabel.ForeColor = Color.LightBlue;
             }
 
-           
-            else if (
-                (playerChoice == "🪨" && computerChoice == "✂️") ||
-                (playerChoice == "📄" && computerChoice == "🪨") ||
-                (playerChoice == "✂️" && computerChoice == "📄")
-            )
-            {
-                resultLabel.Text = "YOU WIN!";
-                resultLabel.ForeColor = Color.Lime;
+// WIN
+else if (
+    (playerChoice == "🪨" && computerChoice == "✂️") ||
+    (playerChoice == "📄" && computerChoice == "🪨") ||
+    (playerChoice == "✂️" && computerChoice == "📄")
+)
+{
+    resultLabel.Text = "YOU WIN!";
+    resultLabel.ForeColor = Color.Lime;
 
-                score++;
-                scoreLabel.Text = "Score: " + score;
+    score++;
+    scoreLabel.Text = "Score: " + score;
 
-                MessageBox.Show(
-                    "YOU WIN! 🎉\nYou are being redirected to the question screen.",
-                    "Victory"
-                );
-            }
+    MessageBox.Show(
+        "YOU WIN! 🎉\nYou are being redirected to the question screen.",
+        "Victory"
+    );
 
-         
+    QuestionForm qf = new QuestionForm();
+    qf.ShowDialog();
+}
+
+            // LOSE
             else
             {
                 resultLabel.Text = "YOU LOSE!";
                 resultLabel.ForeColor = Color.Red;
             }
+
+            // RESULT LABEL CENTER
+            resultLabel.Left =
+                (this.ClientSize.Width - resultLabel.Width) / 2;
         }
 
         void RockBtn_Click(object? sender, EventArgs e)
